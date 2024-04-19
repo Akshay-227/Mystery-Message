@@ -38,7 +38,7 @@ export const authOptions: NextAuthOptions = {
           }
 
           // If the user is not verified, throw an error
-          if (!user.isVerifed) {
+          if (!user.isVerified) {
             throw new Error("User not verified, please verify your email");
           }
 
