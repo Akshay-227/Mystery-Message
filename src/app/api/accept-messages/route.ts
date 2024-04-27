@@ -42,12 +42,12 @@ export async function POST(request: Request) {
   // Get the user's ID from the session and parse it as a string
   const userId = user._id?.toString();
   // Get the new message accepting status from the request body
-  const { isAcceptingMessage } = await request.json();
+  const { isAcceptingMessages } = await request.json();
   // Try to update the user with the new message accepting status
   try {
     const updatedUser = await UserModel.findByIdAndUpdate(
       userId,
-      { isAcceptingMessage },
+      { isAcceptingMessages },
       { new: true }
     );
     // If the user was updated, return a success response
@@ -107,7 +107,7 @@ export async function GET(req: Request) {
       {
         success: true,
         message: "User found",
-        isAcceptingMessage: foundUser.isAcceptingMessage,
+        isAcceptingMessages: foundUser.isAcceptingMessages,
       },
       { status: 200 }
     );
