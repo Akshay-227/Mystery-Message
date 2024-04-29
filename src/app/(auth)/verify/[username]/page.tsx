@@ -51,7 +51,7 @@ const VerifyAccount = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-200">
+    <div className="flex justify-center items-center min-h-screen bg-gray-900">
       <div className="max-w-md w-full p-8 space-y-8 bg-white rounded-lg shadow-lg">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
