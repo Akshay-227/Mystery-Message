@@ -61,43 +61,23 @@ const MessagePage = () => {
   const onSubmit = async (data: z.infer<typeof messageSchema>) => {
     setIsLoading(true);
     try {
-      const response = await axios.get<ApiResponse>("/api/accept-messages");
-      if (response.data.isAcceptingMessages) {
-        try {
-          const response = await axios.post<ApiResponse>("/api/send-message", {
-            username: params.username,
-            content: data.content,
-          });
-          if (response.data.success) {
-            toast({
-              title: "Success",
-              description: response.data.message || "Message sent successfully",
-            });
-            form.setValue("content", "");
-          } else {
-            toast({
-              title: "Error",
-              description: response.data.message || "Failed to send message",
-              variant: "destructive",
-            });
-          }
-        } catch (error) {
-          const axiosError = error as AxiosError<ApiResponse>;
-          toast({
-            title: "Error",
-            description:
-              axiosError.response?.data.message || "Failed to send message",
-            variant: "destructive",
-          });
-        }
+      const response = await axios.post<ApiResponse>("/api/send-message", {
+        username: params.username,
+        content: data.content,
+      });
+      if (response.data.success) {
+        toast({
+          title: "Success",
+          description: response.data.message || "Message sent successfully",
+        });
+        form.setValue("content", "");
       } else {
         toast({
           title: "Error",
-          description: `${params.username} is not accepting messages currently.`,
+          description: response.data.message || "Failed to send message",
           variant: "destructive",
         });
       }
-      setIsLoading(false);
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
@@ -106,7 +86,6 @@ const MessagePage = () => {
           axiosError.response?.data.message || "Failed to send message",
         variant: "destructive",
       });
-      setIsLoading(false);
     } finally {
       setIsLoading(false);
     }

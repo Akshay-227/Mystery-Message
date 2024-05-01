@@ -95,7 +95,7 @@ const SignUp = () => {
     <div className="flex min-h-screen justify-center items-center bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-8 rounded-xl bg-white shadow-lg">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
+          <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl mb-6">
             {" "}
             Join Annonymous Messages
           </h1>
