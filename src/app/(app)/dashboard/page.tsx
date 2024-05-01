@@ -89,7 +89,7 @@ const pages = () => {
     setIsSwitchingLoading(true);
     try {
       const response = await axios.post<ApiResponse>("/api/accept-messages", {
-        acceptMessage: !acceptMessages,
+        isAcceptingMessages: !acceptMessages,
       });
       setValue("acceptMessage", !acceptMessages);
       toast({
