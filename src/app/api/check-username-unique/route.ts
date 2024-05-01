@@ -8,6 +8,7 @@ const UsernameQuerySchema = z.object({
   username: usernameValidation,
 });
 
+export const dynamic = 'force-dynamic'
 //GET method to check if username is unique - fast process (in FE use debouncing)
 export async function GET(req: Request) {
   await dbConnect();
