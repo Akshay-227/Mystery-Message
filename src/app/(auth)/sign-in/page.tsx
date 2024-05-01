@@ -20,7 +20,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { signInSchema } from "@/schemas/signInSchema";
 import { signIn } from "next-auth/react";
-const page = () => {
+const SignIn = () => {
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
@@ -138,4 +138,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default SignIn;

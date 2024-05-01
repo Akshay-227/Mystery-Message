@@ -33,7 +33,7 @@ const parseStringMessages = (messageString: string): string[] => {
 const initialMessageString =
   "What's your favorite movie?||Do you have any pets?||What's your dream job?";
 
-const page = () => {
+const MessagePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const params = useParams<{ username: string }>();
   const { toast } = useToast();
@@ -220,4 +220,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default MessagePage;
