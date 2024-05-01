@@ -7,7 +7,7 @@ import AuthProvider from '@/context/Authprovider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'True Feedback',
+  title: 'Annonymous Messages',
   description: 'Real feedback from real people.',
 };
 

@@ -97,7 +97,7 @@ const SignUp = () => {
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             {" "}
-            Join Mystery Message
+            Join Annonymous Messages
           </h1>
           <p className="text-gray-600  mb-6">
             Sign up to start your annonymous conversation
